@@ -1,27 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.anton-font {
+  font-family: "Anton", sans-serif;
+}
+
+@layer utilities {
+  
+  .border {
+    @apply border-[1px] border-gray-300 rounded-[6px]
   }
-}
+  
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .flex-between-start {
+    @apply flex justify-between items-start;
+  }
+
+  .flex-coloum {
+    @apply flex flex-col 
+  }
+
+  .flex-coloum-center {
+    @apply flex flex-col items-center 
+  }
+
+  .border-1 {
+    @apply border-[1px] border-gray-300
+  }
+
+  .flex-coloum-start {
+    @apply flex flex-col justify-start
+  }
+
+  .flex-row2 {
+    @apply flex flex-row 
+  }
+
+  .flex-row-between {
+    @apply flex flex-row justify-between items-center
+  }
+  
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .input-styles {
+    @apply px-3 py-2 border-[1px] border-gray-300 rounded-md;
+  }
+
+  .main-heading-1{
+    @apply md:text-5xl font-normal;
+  }
+
+  .logo {
+    @apply md:text-3xl text-lg font-normal
+  }
+
+  .heading1 {
+    @apply md:text-4xl text-lg font-normal;
+  }
+
+  .heading2 {
+    @apply md:text-3xl text-lg font-light;
+  }
+
+  .heading3 {
+    @apply md:text-2xl text-lg font-light;
+  }
+
+  .heading3-title {
+    @apply md:text-2xl text-lg font-normal
+  }
+
+  .heading4 {
+    @apply md:text-xl text-lg font-light;
+  }
+
+  .intro-bold {
+    @apply text-2xl font-normal;
+  }
+
+  .intro-light {
+    @apply font-thin;
+  }
 }
