@@ -8,8 +8,8 @@ export default function HomePage() {
     <>
       <section className="py-5 flex-coloum-center gap-6 md:mt-24 mx-auto w-full max-w-screen-xl px-6 xs:px-8 sm:px-16">
         <IntroCard />
-
-        @ts-expect-error Server Component
+        
+        {/* @type-expect-error Server Component */}
         <Posts />
       </section>
     </>

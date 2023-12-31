@@ -8,6 +8,11 @@ export default async function Posts() {
 
   const posts = await getPostsMeta();
 
+  posts?.forEach(post => {
+    post.id = post.id.split('/')[1];
+    // console.log(post)
+  });
+
   if(!posts) {
     return <p className=" mt-10 text-center">Sorry :( No posts found</p>
   }

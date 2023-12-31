@@ -30,9 +30,11 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
 
         const rawMDX = await res.text()
 
+        // console.log(rawMDX)
+
         if (rawMDX === '404: Not Found') return undefined
 
-        const { frontmatter, content } = await compileMDX<{ title: string, date: string, tags: string[] }>({
+        const { frontmatter, content } = await compileMDX<{ title: string, description:string, date: string, tags: string[] }>({
             source: rawMDX,
             // components: {
             //     Video,
@@ -42,7 +44,8 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
                 parseFrontmatter: true,
                 mdxOptions: {
                     rehypePlugins: [
-                        // rehypeHighlight,
+                        // @ts-expect-error
+                        rehypeHighlight,
                         rehypeSlug,
                         [rehypeAutolinkHeadings, {
                             behavior: 'wrap'
@@ -54,7 +57,7 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
 
         const id = fileName.replace(/\.mdx$/, '')
 
-        const blogPostObj: BlogPost = { meta: { id, title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags }, content }
+        const blogPostObj: BlogPost = { meta: { id, title: frontmatter.title, description:frontmatter.description, date: frontmatter.date, tags: frontmatter.tags }, content }
 
         return blogPostObj
     } catch(error: any|unknown) {
@@ -78,12 +81,13 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
 
     const filesArray = repoFiletree.tree.map(obj => obj.path).filter(path => path.endsWith('.mdx'))
 
-    // console.log(filesArray)
+    console.log(filesArray)
 
     const posts: Meta[] = []
 
     for (const file of filesArray) {
         const post = await getPostByName(file)
+        // console.log(post)
         if (post) {
             const { meta } = post
             posts.push(meta)

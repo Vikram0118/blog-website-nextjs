@@ -11,7 +11,10 @@ type Props = {
 }
 
 export default function PostItem({ post }: Props) {
-    const { id, title, date, tags } = post
+    const { id, title, description, date, tags } = post
+
+    // console.log("tags:"+tags)
+
     const formattedDate = getFormattedDate(date)
 
     return (
@@ -19,9 +22,9 @@ export default function PostItem({ post }: Props) {
             <div className="flex-coloum-start gap-2">
                 <Link className="heading3-title" href={`/posts/${id}`}>{title}</Link>
                 <p className="text-sm">{formattedDate}</p>
-                {/* <p className="heading4">{description}</p> */}
+                <p className="heading4">{description}</p>
 
-                <ul className="flex flex-row flex-wrap">
+                {/* <ul className="flex flex-row flex-wrap">
                   {tags.map((tag, index) => {
                     return (
                         <div key={tag} className='flex flex-row items-center'>
@@ -40,7 +43,7 @@ export default function PostItem({ post }: Props) {
                         </div> 
                     )
                   })}
-                </ul>
+                </ul> */}
             </div>
             {/* <Image 
                 src= {`/assets/blog/${id}.jpeg`}
