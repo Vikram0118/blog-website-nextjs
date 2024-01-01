@@ -14,9 +14,17 @@
 }
 
 @layer utilities {
+
+  .icons-name{
+    @apply text-[10px] md:text-xs
+  }
   
   .border {
     @apply border-[1px] border-gray-300 rounded-[6px]
+  }
+
+  .flex-between-row {
+    @apply flex flex-row justify-between items-center
   }
   
   .flex-between {
@@ -88,10 +96,14 @@
   }
 
   .intro-bold {
-    @apply text-2xl font-normal;
+    @apply md:text-2xl text-xl font-normal;
   }
 
   .intro-light {
     @apply font-thin;
+  }
+
+  .heading5{
+    @apply sm:text-base text-sm font-light
   }
 }

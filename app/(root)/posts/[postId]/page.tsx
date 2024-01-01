@@ -52,9 +52,9 @@ export default async function Post({ params: { postId } }: Props) {
     // ))
 
     return (
-        <div className="max-w-4xl mx-auto px-2 mt-24">
+        <div className="max-w-5xl mx-auto px-2 mt-24 prose prose-xl text-black">
             <h2 className="text-3xl mt-4 mb-0">{meta.title}</h2>
-            <p className="mt-0 text-sm">
+            <p className="mt-0 ">
                 {pubDate}
             </p>
             <article>
@@ -62,10 +62,10 @@ export default async function Post({ params: { postId } }: Props) {
             </article>
             {/* <section>
                 <h3>Related:</h3>
-                {/* <div className="flex flex-row gap-4">
-                    {tags}
-                </div> */}
-            {/* </section> */} 
+                <div className="flex flex-row gap-4">
+                    {meta.tags}
+                </div>
+            </section>  */}
             <p className="mb-10">
                 <Link href="/">← Back to home</Link>
             </p>

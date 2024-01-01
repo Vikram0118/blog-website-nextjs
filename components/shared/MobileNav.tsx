@@ -28,19 +28,24 @@ export default function MobileNav() {
           />
         </SheetTrigger>
         <SheetContent className="flex flex-col gap-4 bg-white md:hidden">
-          <Image 
-            src="/assets/logo.svg"
-            alt="logo"
-            width={40}
-            height={30}
-          />
+        <Link href='/' className='anton-font text-4xl'> VP. </Link>
           <Separator className="border border-gray-400" />
-          <ul className="md:flex-between flex flex-col gap-3 w-full md:flex-row">
+          <ul className="flex flex-col gap-3 w-full mt-1">
             {socialLinks.map((link, index) => {
               return (
                   <React.Fragment key={link.link}>
-                      <li key={link.link}>
-                          <Link href={link.link} className='heading1'>{link.label}</Link>
+                      <li key={link.link} className="my-1">
+                          <Link href={link.link} className='heading1 flex flex-row items-center gap-1'>
+                            <Image 
+                              src= {`${link.icon}`}
+                              width={30}
+                              height={30}
+                              quality={100}
+                              priority={true}
+                              alt='react'
+                            />
+                            {link.label}
+                          </Link>
                       </li>
                   </React.Fragment> 
               )

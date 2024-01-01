@@ -14,12 +14,12 @@ export default async function Posts() {
   });
 
   if(!posts) {
-    return <p className=" mt-10 text-center">Sorry :( No posts found</p>
+    return <p className=" mt-10 text-center mt-30">Sorry :( No posts found</p>
   }
 
   return (
-    <section className=" mx-auto max-w-5xl">
-        <ul className="w-full">
+    <section className="flex flex-col justify-start w-full">
+        <ul className="px-3">
             {posts.map((post, index) => (
               <React.Fragment key={post.id}>
                 <PostItem post={post} />

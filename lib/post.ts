@@ -34,12 +34,8 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
 
         if (rawMDX === '404: Not Found') return undefined
 
-        const { frontmatter, content } = await compileMDX<{ title: string, description:string, date: string, tags: string[] }>({
+        const { content, frontmatter } = await compileMDX<{ title: string, description:string, date: string, tags: string[] }>({
             source: rawMDX,
-            // components: {
-            //     Video,
-            //     CustomImage,
-            // },
             options: {
                 parseFrontmatter: true,
                 mdxOptions: {
@@ -54,6 +50,7 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
                 },
             }
         })
+
 
         const id = fileName.replace(/\.mdx$/, '')
 
@@ -81,7 +78,7 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
 
     const filesArray = repoFiletree.tree.map(obj => obj.path).filter(path => path.endsWith('.mdx'))
 
-    console.log(filesArray)
+    // console.log(filesArray)
 
     const posts: Meta[] = []
 

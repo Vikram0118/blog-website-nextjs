@@ -1,7 +1,7 @@
 export const socialLinks = [
   {
     label: 'Linkedin',
-    link: 'www.linkedin.com/in/vikram-palani',
+    link: 'https://www.linkedin.com/in/vikram-palani/',
     icon: '/assets/icons/linkedin.svg',
   },
   {
@@ -21,6 +21,11 @@ export const skills = [
     name:'Next.js',
     icon: '/assets/icons/nextjs.svg',
     border_hover:'border-icons-nextjs'
+  },
+  {
+    name:'Java',
+    icon: '/assets/icons/java.svg',
+    border_hover:'border-icons-java'
   },
   {
     name:'Tailwind CSS',
@@ -46,11 +51,6 @@ export const skills = [
     name:'AWS',
     icon: '/assets/icons/aws.svg',
     border_hover:'border-icons-aws'
-  },
-  {
-    name:'Java',
-    icon: '/assets/icons/java.svg',
-    border_hover:'border-icons-java'
   },
   {
     name:'Git',

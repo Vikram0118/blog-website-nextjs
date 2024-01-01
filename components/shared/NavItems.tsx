@@ -8,7 +8,7 @@ import { Separator } from '../ui/separator';
 export default function NavItems() {
 
   return (
-    <ul className="md:flex-between flex flex-col gap-6 w-full md:flex-row">
+    <ul className="flex-between-row gap-6 w-full">
       {socialLinks.map((link, index) => {
         return (
             <React.Fragment key={link.link}>
