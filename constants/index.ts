@@ -19,12 +19,12 @@ export const skills = [
   },
   {
     name:'Next JS',
-    icon: '/assets/icons/Next.js.svg',
+    icon: '/assets/icons/Next js.svg',
     border_hover:'border-icons-nextjs'
   },
   {
     name:'Java',
-    icon: '/assets/icons/java.svg',
+    icon: '/assets/icons/Java.svg',
     border_hover:'border-icons-java'
   },
   {
@@ -74,7 +74,7 @@ export const skills = [
   },
   {
     name:'SQL',
-    icon: '/assets/icons/SQl.svg',
+    icon: '/assets/icons/SQL.svg',
     border_hover:'border-icons-sql'
   },
 ]
