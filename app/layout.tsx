@@ -5,6 +5,9 @@ import { Poppins } from 'next/font/google'
 export const metadata: Metadata = {
   title: 'Blog - Vikram ',
   description: 'Blog website of Vikram Palani',
+  other: {
+    "color-scheme" : "only light"
+  }
 }
 
 const poppins = Poppins({

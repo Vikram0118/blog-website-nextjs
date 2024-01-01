@@ -65,7 +65,7 @@
   }
 
   .heading1 {
-    @apply md:text-4xl text-lg font-normal;
+    @apply md:text-4xl text-2xl font-medium;
   }
 
   .heading2 {

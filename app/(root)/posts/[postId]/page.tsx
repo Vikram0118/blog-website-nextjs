@@ -3,6 +3,9 @@ import { getPostsMeta, getPostByName } from "@/lib/post"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import 'highlight.js/styles/github-dark.min.css'
+import Image from "next/image"
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
 
 export const revalidate = 86400
 
@@ -47,28 +50,18 @@ export default async function Post({ params: { postId } }: Props) {
 
     const pubDate = getFormattedDate(meta.date)
 
-    // const tags = meta.tags.map((tag, i) => (
-    //     <Link key={i} href={`/tags/${tag}`}>{tag}</Link>
-    // ))
-
     return (
-        <div className="max-w-5xl mx-auto px-2 mt-24 prose prose-xl text-black">
-            <h2 className="text-3xl mt-4 mb-0">{meta.title}</h2>
-            <p className="mt-0 ">
+        <div className="max-w-5xl mx-auto px-5 mt-24 prose prose-xl text-black">
+            <p className="heading1 mt-4 mb-0">{meta.title}</p>
+            <p className="text-sm mt-0 ">
                 {pubDate}
             </p>
             <article>
                 {content}
             </article>
-            {/* <section>
-                <h3>Related:</h3>
-                <div className="flex flex-row gap-4">
-                    {meta.tags}
-                </div>
-            </section>  */}
-            <p className="mb-10">
-                <Link href="/">← Back to home</Link>
-            </p>
+                            
+            <Link href="/" className="mt-11">Back to home</Link>
+            
         </div>
     )
 }

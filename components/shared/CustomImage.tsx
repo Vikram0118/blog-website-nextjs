@@ -14,7 +14,7 @@ export default function CustomImage({ src, alt, priority }: Props) {
 
         <div className="w-full h-full">
             <Image
-                className="rounded-lg mx-auto"
+                className="rounded-[3px] mx-auto"
                 src={src}
                 alt={alt}
                 width={650}

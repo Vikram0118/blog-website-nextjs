@@ -26,7 +26,7 @@ export default function IntroCard() {
           <ul className="flex flex-row flex-wrap">
             {skills.map((skill, index) => {
               return (
-                  <div key={skill.name} className='flex flex-row items-center'>
+                  <li key={skill.name} className='flex flex-row items-center'>
                       <div key={skill.name} className='flex-row2 mx-1 py-[2px] my-2 md:border-[1px] md:rounded-xl md:px-2 md:border-gray-300'>
                         <Image 
                           src= {`${skill.icon}`}
@@ -39,7 +39,7 @@ export default function IntroCard() {
                       <Badge variant="outline" className='icons-name'>{skill.name}</Badge>
                       </div>
                       {index < skills.length - 1 && <Separator className="h-5 mx-[2px] md:mx-2 border-gray-200 border-[1px]" decorative orientation="vertical"/>}
-                  </div> 
+                  </li> 
               )
             })}
           </ul>

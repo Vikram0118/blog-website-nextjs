@@ -2,7 +2,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
-// import CustomImage from "@/components/shared/CustomImage"
+import CustomImage from "@/components/shared/CustomImage"
 
 import { BlogPost, Meta } from "@/types"
 
@@ -36,6 +36,9 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
 
         const { content, frontmatter } = await compileMDX<{ title: string, description:string, date: string, tags: string[] }>({
             source: rawMDX,
+            components: {
+                CustomImage
+            },
             options: {
                 parseFrontmatter: true,
                 mdxOptions: {

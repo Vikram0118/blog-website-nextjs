@@ -33,21 +33,19 @@ export default function MobileNav() {
           <ul className="flex flex-col gap-3 w-full mt-1">
             {socialLinks.map((link, index) => {
               return (
-                  <React.Fragment key={link.link}>
-                      <li key={link.link} className="my-1">
-                          <Link href={link.link} className='heading1 flex flex-row items-center gap-1'>
-                            <Image 
-                              src= {`${link.icon}`}
-                              width={30}
-                              height={30}
-                              quality={100}
-                              priority={true}
-                              alt='react'
-                            />
-                            {link.label}
-                          </Link>
-                      </li>
-                  </React.Fragment> 
+                <li key={link.link} className="my-1">
+                    <Link href={link.link} className='heading1 flex flex-row items-center gap-1'>
+                      <Image 
+                        src= {`${link.icon}`}
+                        width={30}
+                        height={30}
+                        quality={100}
+                        priority={true}
+                        alt='react'
+                      />
+                      {link.label}
+                    </Link>
+                </li>
               )
             })}
           </ul>

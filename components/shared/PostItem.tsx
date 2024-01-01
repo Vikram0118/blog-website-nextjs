@@ -24,36 +24,27 @@ export default function PostItem({ post }: Props) {
                 <p className="text-sm">{formattedDate}</p>
                 <p className="heading4">{description}</p>
 
-                {/* <ul className="flex flex-row flex-wrap">
-                  {tags.map((tag, index) => {
-                    return (
-                        <div key={tag} className='flex flex-row items-center'>
-                            <li key={tag} className={`flex-row2 px-[4px] py-[2px]`}>
-                            <Image 
-                                src= {`/assets/icons/${tag}.svg`}
-                                width={20}
-                                height={20}
-                                quality={100}
-                                priority={true}
-                                alt='react'
-                              />
-                            <Badge variant="outline">{tag}</Badge>
-                            </li>
-                            {index < tags.length - 1 && <Separator className="h-5 border-gray-200 mx-3 my-[10px] border-[1px] gap-3" decorative orientation="vertical"/>}
-                        </div> 
-                    )
-                  })}
-                </ul> */}
+                <ul className="flex flex-row flex-wrap">
+                    {tags.map((tag, index) => {
+                      return (
+                          <li key={tag} className='flex flex-row items-center'>
+                              <div key={tag} className='flex-row2 mx-1 py-[2px] my-2 md:border-[1px] md:rounded-xl md:px-2 md:border-gray-300'>
+                                <Image 
+                                  src= {`/assets/icons/${tag}.svg`}
+                                  width={20}
+                                  height={20}
+                                  quality={100}
+                                  priority={true}
+                                  alt={tag}
+                                />
+                              <Badge variant="outline" className='icons-name'>{tag}</Badge>
+                              </div>
+                              {index < tags.length - 1 && <Separator className="h-5 mx-[2px] md:mx-2 border-gray-200 border-[1px]" decorative orientation="vertical"/>}
+                          </li> 
+                      )
+                    })}
+                  </ul>
             </div>
-            {/* <Image 
-                src= {`/assets/blog/${id}.jpeg`}
-                width={300}
-                height={300}
-                quality={100}
-                priority={true}
-                alt={id}
-                className="rounded-[3px]"
-            /> */}
         </li>
     )
 }
