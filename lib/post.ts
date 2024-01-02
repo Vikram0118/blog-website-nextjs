@@ -17,7 +17,7 @@ type Filetree = {
 export async function getPostByName(fileName: string): Promise<BlogPost | undefined> {
 
     try {
-        // console.log(fileName)
+        console.log(fileName)
         const res = await fetch(`https://raw.githubusercontent.com/Vikram0118/blogposts-mdx/main/${fileName}`, {
             headers: {
                 Accept: 'application/vnd.github+json',

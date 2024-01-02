@@ -3,9 +3,6 @@ import { getPostsMeta, getPostByName } from "@/lib/post"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import 'highlight.js/styles/github-dark.min.css'
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
 
 export const revalidate = 86400
 
@@ -42,6 +39,7 @@ export async function generateMetadata({ params: { postId } }: Props) {
 
 export default async function Post({ params: { postId } }: Props) {
 
+    console.log(postId)
     const post = await getPostByName(`Blogs/${postId}.mdx`) //deduped!
 
     if (!post) notFound()

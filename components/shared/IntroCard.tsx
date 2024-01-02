@@ -7,15 +7,7 @@ export default function IntroCard() {
   return (
     <>
       <section className='border-[1px] rounded-[3px] w-full flex flex-coloum md:flex-row2 gap-5 py-8 px-6 bg-white'>
-
-      <Image 
-        src='/assets/blog/ssg-ssr.jpeg'
-        width={300}
-        height={200}
-        quality={100}
-        className='hidden border-1 border-black drop-shadow-xl shadow-black mx-auto rounded-[3px]'
-        priority={true}
-        alt='vikram'/>
+        
         <div className='flex-coloum-start w-full gap-4'>
           <div className='heading4 flex flex-col gap-2'>
             <p>Hello there! I'm <span className='intro-bold underline'>Vikram P.</span></p>

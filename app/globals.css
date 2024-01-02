@@ -81,11 +81,11 @@
   }
 
   .heading4 {
-    @apply md:text-xl text-lg font-light;
+    @apply md:text-xl text-base font-light;
   }
 
   .intro-bold {
-    @apply md:text-2xl text-xl font-normal;
+    @apply md:text-2xl text-lg font-normal;
   }
 
   .intro-light {
