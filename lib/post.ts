@@ -34,7 +34,7 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
 
         if (rawMDX === '404: Not Found') return undefined
 
-        const { content, frontmatter } = await compileMDX<{ title: string, description:string, date: string, tags: string[] }>({
+        const { content, frontmatter } = await compileMDX<{ title: string, description:string, date: string, tags: string[], read:string }>({
             source: rawMDX,
             components: {
                 CustomImage
@@ -57,7 +57,7 @@ export async function getPostByName(fileName: string): Promise<BlogPost | undefi
 
         const id = fileName.replace(/\.mdx$/, '')
 
-        const blogPostObj: BlogPost = { meta: { id, title: frontmatter.title, description:frontmatter.description, date: frontmatter.date, tags: frontmatter.tags }, content }
+        const blogPostObj: BlogPost = { meta: { id, title: frontmatter.title, description:frontmatter.description, date: frontmatter.date, tags: frontmatter.tags, read:frontmatter.read }, content }
 
         return blogPostObj
     } catch(error: any|unknown) {

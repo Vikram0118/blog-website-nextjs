@@ -5,7 +5,8 @@ export type Meta = {
     title: string,
     description: string,
     date: string,
-    tags: string[]
+    tags: string[],
+    read: string
 }
 
 export type BlogPost = {

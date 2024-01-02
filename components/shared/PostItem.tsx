@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default function PostItem({ post }: Props) {
-    const { id, title, description, date, tags } = post
+    const { id, title, description, date, tags, read } = post
 
     // console.log("tags:"+tags)
 
@@ -21,7 +21,7 @@ export default function PostItem({ post }: Props) {
         <li className="my-4 flex-row2 flex-between-start px-5 gap-1">
             <div className="flex-coloum-start gap-2">
                 <Link className="heading3-title hover:underline" href={`/posts/${id}`}>{title}</Link>
-                <p className="text-sm">{formattedDate}</p>
+                <p className="text-sm">{formattedDate} - {read}</p>
                 <p className="heading4">{description}</p>
 
                 <ul className="flex flex-row flex-wrap">
