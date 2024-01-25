@@ -10,8 +10,9 @@ export default async function Posts() {
 
   posts?.forEach(post => {
     post.id = post.id.split('/')[1];
-    // console.log(post)
   });
+
+  console.log(posts)
 
   if(!posts) {
     return <p className=" mt-10 text-center mt-30">Sorry :( No posts found</p>

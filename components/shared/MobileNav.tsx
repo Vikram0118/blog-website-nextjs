@@ -31,6 +31,7 @@ export default function MobileNav() {
         <Link href='/' className='anton-font text-4xl'> VP. </Link>
           <Separator className="border border-gray-400" />
           <ul className="flex flex-col gap-3 w-full mt-1">
+            
             {socialLinks.map((link, index) => {
               return (
                 <li key={link.link} className="my-1">
